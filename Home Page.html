@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="letter-r.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="Home Page.css">
+  <link rel="stylesheet" href="Footer.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <title>Home</title>
+  <style>
+    /* For Pop Up */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      text-align: center;
+      color: #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+    }
+
+    #c2 {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+    #c1{
+      text-decoration: none;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* For Visitors */
+
+    .big-con {
+      position: absolute;
+      width: 99.8%;
+      height: 18rem;
+    }
+
+    .con {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      border: 1px solid white;
+      background-color: rgb(7, 8, 14);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* margin: 11rem 10rem 10rem 35rem; */
+      flex: 1;
+      width: 25rem;
+      cursor: pointer;
+      float: right;
+      position: relative;
+      z-index: 100;
+      display: none;
+    }
+
+    .h1 {
+      text-align: center;
+      color: white;
+    }
+
+    .con p {
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .close {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+
+    .con button {
+      margin-top: 10px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.4s;
+    }
+
+    .con button:hover {
+      background-color: #007bff83;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn-2 {
+      margin-left: 5px
+    }
+
+@media only screen and (max-width:656px){
+  .fa-eye{
+    font-size: 30px;
+  }
+    .logo{
+      width: 15rem;
+    }
+  }
+
+
+    @media only screen and (max-width:425px) {
+      .con {
+        width: 20rem;
+        height: 20rem;
+      }
+
+      .con h1 {
+        font-size: 30px;
+      }
+
+      .con p {
+        font-size: 15px;
+      }
+    }
+
+    @media only screen and (max-width:320px) {
+      .con {
+        width: 17rem;
+        height: 19rem;
+      }
+
+      .con h1 {
+        font-size: 30px;
+      }
+
+      .con p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Pop Up -->
+  <div id="welcome-popup" class="popup">
+    <div class="popup-content">
+      <span id="c2" class="close" onclick="closePopup()">&times;</span>
+      <h2>Welcome to Our Website!</h2>
+      <p>Thanks for visiting. Click the button below to explore.</p>
+      <br>
+      <button id="visit-now-btn"><a id="c1" href="Product.html">Visit Now</a></button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // Delay the execution of fadeIn by 2000 milliseconds (2 seconds)
+      setTimeout(function () {
+        $('#welcome-popup').fadeIn(1000); // 1000 milliseconds (1 second) duration
+      }, 2000);
+
+      // Close the popup when the close button is clicked
+      $('.close').click(function () {
+        closePopup();
+      });
+
+      // Or close the popup when the "Visit Now" button is clicked
+      $('#visit-now-btn').click(function () {
+        closePopup();
+      });
+    });
+
+    function closePopup() {
+      $('#welcome-popup').hide("slow");
+    };
+  </script>
+
+
+
+  <!-- Navbar -->
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+        <div class="logo"><img src="Logo.png" alt="Loading Image" id="logo"></div>
+        <ul class="links">
+          <li><a href="Home Page.html">Home</a></li>
+         
+          <li><a href="Product.html">Products</a></li>
+
+          <li><a href="About Us.html">About</a></li>
+
+          <li><a href="Gallery.html">Images</a></li>
+
+          <li><a href="Contact Us.html">Contact</a></li>
+         
+        </ul>
+      </div>
+      <div class="eye"><i class="fa-sharp fa-solid fa-eye"></i></div>
+    </nav>
+  </div>
+
+
+  <!-- Visitors -->
+  <div class="big-con">
+    <div class="con">
+      <h1 class="h1">Visitor Information</h1>
+      <p id="visitor-count">Total Visitors: <span id="count">0</span></p>
+      <p id="location-info">Location: <span id="location">Loading...</span></p>
+      <p id="date-time">Current Date and Time: <span id="current-time">Loading...</span></p>
+      <div class="buttons"><button id="getLocationBtn">Get My Location</button><button class="btn-2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize visitor count and update count on page load
+      let visitorCount = parseInt(localStorage.getItem('visitorCount')) || 0;
+      $('#count').text(visitorCount);
+
+      // Increment visitor count
+      visitorCount++;
+      localStorage.setItem('visitorCount', visitorCount);
+      $('#count').text(visitorCount);
+
+      // Function to fetch and display visitor's location using Geolocation API
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            $('#location').text(`Latitude: ${latitude}, Longitude: ${longitude}`);
+          }, function (error) {
+            $('#location').text('Location not available');
+          });
+        } else {
+          $('#location').text('Geolocation not supported');
+        }
+      }
+
+      // Bind the function to the button click event
+      $('#getLocationBtn').click(getLocation);
+
+      // Update current date and time every second
+      function updateDateTime() {
+        const now = new Date();
+        const formattedDateTime = now.toLocaleString();
+        $('#current-time').text(formattedDateTime);
+      }
+
+      // Initial call to updateDateTime
+      updateDateTime();
+
+      // Update date and time every second
+      setInterval(updateDateTime, 1000);
+    });
+
+    $(document).ready(function () {
+      $(".fa-eye").click(function () {
+        $(".con").show("slow");
+        $(".fa-eye").css("color","cyan");
+      });
+      $(".btn-2").click(function () {
+        $(".con").hide("slow");
+        $(".fa-eye").css("color","white");
+      });
+    });
+  </script>
+
+
+
+  <br>
+
+  <!-- Slider -->
+  <section class="slider">
+    <!-- fade css -->
+    <div class="myslide fade">
+      <div class="txt">
+        <h1>Cool Comfort</h1>
+        <p>Relax in Cool Bliss with Our Top-Notch <br> AC Solutions.</p>
+      </div>
+      <img class="img" src="Home Page Images/1st Img.jpg" style="width: 100%; height: 100%;">
+    </div>
+
+    <div class="myslide fade">
+      <div class="txt">
+        <h1>Expertise</h1>
+        <p>Expert care for your <br> cooling needs, one repair at a time</p>
+      </div>
+      <img class="img" src="Home Page Images/2nd Image.jpg" style="width: 100%; height: 100%;">
+    </div>
+
+    <div class="myslide fade">
+      <div class="txt">
+        <h1>Satisfied Customers</h1>
+        <p>From cool smiles to lasting comfort, <br> customer satisfaction is our guarantee.</p>
+      </div>
+      <img class="img" src="Home Page Images/3rd Image.jpg" style="width: 100%; height: 100%;">
+    </div>
+
+    <div class="myslide fade">
+      <div class="txt">
+        <h1>Beautiful Design</h1>
+        <p>Where innovation meets elegance, our designs redefine cooling perfection.</p>
+      </div>
+      <img class="img" src="Home Page Images/4th Image.jpg" style="width: 100%; height: 100%;">
+    </div>
+
+    <div class="myslide fade">
+      <div class="txt">
+        <h1>Variety</h1>
+        <p>Options as diverse as your cooling needs</p>
+      </div>
+      <img class="img" src="Home Page Images/5th Image.jpg" style="width: 100%; height: 100%;">
+    </div>
+    <!-- /fade css -->
+
+    <!-- onclick js -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="dotsbox" style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <br>
+    </div>
+    <!-- /onclick js -->
+  </section>
+  <script src="Home Page.js"></script>
+  <br>
+
+  <!-- Cards -->
+  <aside>
+    <div class="container-row-1">
+      <div class="container">
+        <div class="box">
+          <span class="title">Quality</span>
+          <p> Experience the assurance of top-notch quality in every Rheem product. Our commitment to excellence ensures
+            reliability, efficiency, and durability, providing you with unmatched cooling comfort.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box">
+          <span class="title">Efficiency</span>
+          <p>Discover our range of energy-efficient air conditioning solutions. From innovative technology to
+            eco-friendly designs, Rheem cooling systems prioritize efficiency, helping you save both energy and money.
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box">
+          <span class="title">Support</span>
+          <p>At Rheem, our customers come first. Enjoy peace of mind knowing that our dedicated customer support team is
+            always here for you, offering expert guidance, assistance, and reliable service.</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!-- Cards End -->
+  <br><br>
+
+
+  <!-- Footer -->
+  <footer class="footer-distributed" style="margin-top: 5rem;">
+
+    <div class="footer-left">
+
+      <img src="logo.png" alt="logo" class="footer-logo">
+
+      <p class="footer-links">
+        <a href="Home Page.html" class="link-1">Home</a>
+
+        <a href="Product.html">Products</a>
+
+        <a href="About Us.html">About Us</a>
+
+        <a href="Gallery.html">Images</a>
+
+        <a href="Contact Us.html">Contact Us</a>
+
+
+
+      </p>
+
+      <p class="footer-company-name">Rheem Cooling © 1998</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <p><span> 1100 Abernathy Road</span> , N.E., Suite 1700, Atlanta, GA 30328.</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p> 479-648-6237</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="store@rheemconnections.com">store@rheemconnections.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+
+        Rheem Cooling delivers a superior, seamless shopping experience, blending top-tier in-store ambiance with an
+        omnichannel approach that merges online and offline convenience.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.facebook.com/rheem?mibextid=ZbWKwL"> <i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/rheem?igsh=MXV3ajdmbTVsNGlzYQ=="><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/rheem?s=20"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/rheem-manufacturing/"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

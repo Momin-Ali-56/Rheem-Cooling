@@ -1,0 +1,224 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    background: linear-gradient(45deg , rgba(255, 255, 255, 0.664), rgb(10, 211, 211));
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  div.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  div.header h1 {
+    font-size: 40px;
+    color: #1a1b1d;
+    margin-bottom: 10px;
+  }
+  div.header h2 {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  ul.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  ul.menu li.button {
+    background: #e7dec8;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  .Button-Text{
+    text-align: center;
+    margin-top: 3px;
+  }
+  
+  ul.menu li.button.active {
+    background: #30475e;
+    border: 2px solid black;
+  }
+  ul.menu li.button.active a {
+    color: #e7dec8 !important;
+  }
+  
+  ul.menu li.button a {
+    color: #30475e;
+    padding: 5px 20px;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  
+  ul.menu li.button a:hover {
+    color: #e7dec8;
+    font-weight: 500;
+  }
+  ul.menu li.button:hover {
+    background-color: #30475e;
+    border: 2px solid black;
+  }
+  
+  .card-product-box {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fff;
+    width: 20rem;
+    height: 100% ;
+    border-radius: 20px;
+    margin: 10px 20px;
+    border: 3px solid black;
+    position: relative;
+  }
+  .card::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    transition: 0.5s;
+    content: "";
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .card:hover:before {
+    background-color: rgba(48, 71, 94, 0.5);
+  }
+  
+  .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+  }
+  .img img {
+    width: 100%;
+    height: 40vh;
+    object-fit: contain;
+  }
+  .text-desc {
+    padding: 12px;
+  }
+  .text-desc h3 {
+    color: #30475e;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .text-desc h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #16171a;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0px;
+    background-color: #fff;
+    border-radius: 0px 0px 20px 20px;
+    font-size: 30px;
+    color: #3590eb;
+    font-weight: 700;
+    height: 0px;
+    font-size: 0px;
+    transition: 0.5s;
+  }
+  .card:hover .btn {
+    font-size: 30px;
+    height: 90px;
+    border-top: 3px solid black;
+  }
+  
+  div.loadmore {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #LoadMore {
+    background-color: #30475e;
+    display: inline;
+    padding: 10px 20px;
+    text-align: center;
+    color: #e7dec8;
+    border-radius: 20px;
+    margin: 100px auto;
+  }
+  
+
+
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .btn-confirm {
+    background-color: #30475e;
+    color: #e7dec8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .btn-confirm:hover {
+    background-color: #1a1b1d;
+  }
